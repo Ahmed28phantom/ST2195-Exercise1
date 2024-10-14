@@ -5,9 +5,9 @@ output:
     df_print: paged
 ---
 
-### Student Name:
+### Student Name: Ahmed Mohamed Jasim
 
-### Student ID:
+### Student ID: 00106896
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook for practicing basic R data types, which is part of the ST2195 course at UOL and BIBF.
 Please answer the following questions by writing proper R code, and upload the completed file to a GitHub repository shared with your teacher (Github id heshaaam\@gmail.com).
@@ -38,79 +38,113 @@ rm(list = ls())
 Please place your answer in the available code chunks below the question.
 
 ```{r}
-
+Var1 <- 2
+Var2 <- 6
 ```
 
 2. Add the two variables and save them as a new variable named var3 and print the result.
 
 ```{r}
-
+Var3 <- Var1 + Var2
+print(Var3)
 ```
 
 3. Check the class, mode, and type for var1, var2, var3 and $\pi$ (is found under the variable name pi in R)
 
 ```{r}
+class(Var1)
+class(Var2)
+class(Var3)
+class(pi)
 
+mode(Var1)
+mode(Var2)
+mode(Var3)
+mode(pi)
+
+typeof(Var1)
+typeof(Var2)
+typeof(Var3)
+typeof(pi)
 ```
 
 4. Create two character variables text1 and text2 containing any text of choice. Check mode, class, and type of the first one.
 
 ```{r}
+text1 <- "Hello BIBF"
+text2 <- "Hello UOL"
 
+class(text1)
+mode(text1)
+typeof(text1)
 ```
 
 Add var1 from above to text1 and report the result.
 
 ```{r}
+Var1 + text1
 
+# output
+# Error in Var1 + text1 : non-numeric argument to binary operator
 ```
 
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
 
 ```{r}
-
+Var3_int <- as.integer(Var3)
+Var3_dob <- as.double(Var3_int)
+text1_dob <- as.double(text1)
 ```
 
-6. Use the floor and ceiling functions to caclulate the floor and ceiling of $\pi$.
+6. Use the floor and ceiling functions to calculate the floor and ceiling of $\pi$.
 Check whether the floor of $\pi$ is an integer?
 
 ```{r}
-
+ceiling(pi)
+floor(pi)
+class(pi)
+class(pi) == "integer"
 ```
 
 7. Convert the ‘3.56437’ string as number.
 
 ```{r}
-
+str1 <- "3.56437"
+as.numeric(str1)
 ```
 
 8. Infinity (i.e. $\infty$) is written in R as \\inf . Calculate $\infty$ divided by $-\infty$.
 
 ```{r}
-
+Inf / Inf
 ```
 
 9. Create two freely chosen complex numbers.
 ```{r}
-
+cmplx1 <- 3 + 4i
+cmplx2 <- -2 + 5i
 ```
 
 
 * Check that they are complex indeed.
 ```{r}
-
+class(cmplx1)
+class(cmplx2)
 ```
 
 
 * Add, multiply and divide one by another.
 ```{r}
-
+sum_cmplx <- cmplx1 + cmplx2
+sum_cmplx
+cmplx1 * cmplx2
+cmplx1 / cmplx2
 ```
 
 
 * Add an integer to their sum.
 ```{r}
-
+sum_cmplx + 4
 ```
 
 10. Multiply a logical TRUE by a logical FALSE. 
@@ -118,7 +152,8 @@ Check whether the floor of $\pi$ is an integer?
 Raise the logical TRUE to the 7-th power.
 
 ```{r}
-
+TRUE * FALSE
+TRUE^7
 ```
 
 11. Create two character variables containing two verses of your favorite song.
@@ -134,7 +169,23 @@ Raise the logical TRUE to the 7-th power.
 * extract substring starting at the 5th character and 5 characters long.
 
 ```{r}
+line1 <- "good morning"
+line2 <- "good afternoon"
 
+concatenated <- paste(line1, line2) 
+print(concatenated)
+
+pasted <- paste(line1, line2, sep="*")
+print(pasted)
+
+contains_and <- grepl("and", line2)
+print(contains_and)
+
+substituted <- sub("morning", "night", line1)
+print(substituted)
+
+substring <- substr(line2, 5, 9)
+print(substring)
 ```
 
 Thank you. Please submit the finished notebook to Hesham through GitHub.
